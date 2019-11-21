@@ -23,6 +23,9 @@ class Jokes:
 
 
 	def tell(self):
+		''' returns a random, html-escaped joke string '''
+
+		# check if a search term was passed as a command line argument
 		if len(self.args) > 1:
 			return html.unescape(choice(self.joke_table['searchable'])(self.args[1]))
 		else:
@@ -41,7 +44,7 @@ class Jokes:
 
 	# -------------------- methods to handle specific json responses -------------------- #
 	def chucknorris(self, search=None):
-		''' . '''
+		''' returns a joke string from api.chucknorris.io '''
 		jokes_api = f'https://api.chucknorris.io/jokes/search?query={search}' if search else 'https://api.chucknorris.io/jokes/random'
 		joke_json = self.get_json(jokes_api)
 
@@ -56,7 +59,7 @@ class Jokes:
 			
 
 	def icanhazdadjoke(self, search=None):
-		''' . '''
+		''' returns a joke string from icanhazdadjoke.com '''
 		jokes_api = 'https://icanhazdadjoke.com'
 
 		if search:
@@ -74,7 +77,7 @@ class Jokes:
 
 
 	def sameerkumar(self):
-		''' . '''
+		''' returns a joke string from geek-jokes.sameerkumar.website '''
 		jokes_api = 'https://geek-jokes.sameerkumar.website/api'
 		joke_json = self.get_json(jokes_api)
 
@@ -82,9 +85,8 @@ class Jokes:
 			return joke_json
 
 
-
 	def sv443(self):
-		''' . '''
+		''' returns a joke string from sv443.net '''
 		jokes_api = 'https://sv443.net/jokeapi/category/Any?blacklistFlags=nsfw,religious,political'
 		joke_json = self.get_json(jokes_api)
 
