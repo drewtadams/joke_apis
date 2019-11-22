@@ -1,4 +1,5 @@
 README.md
+setup.cfg
 setup.py
 joke_cli/__init__.py
 joke_cli/__main__.py

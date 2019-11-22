@@ -1,10 +1,10 @@
 # joke APIs pulled from https://www.programmableweb.com/category/humor/api
-import joke_apis
+from .joke_apis import Jokes
 import sys
 
 
 def main():
-	jokes = joke_apis.Jokes(sys.argv)
+	jokes = Jokes(sys.argv)
 	print(f'\n\n{jokes.tell()}\n\n')
 
 
